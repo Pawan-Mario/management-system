@@ -1,0 +1,49 @@
+version: "3.8"
+
+services:
+  app:
+    build: C:\Users\hp\Desktop\Pawan\CompanyTask
+    volumes:
+      - .:/django
+    ports:
+      - "8000:8000"
+    image: app:django
+    container_name: django_container
+    command: python manage.py runserver 0.0.0.0:8000
+    depends_on:
+      - db
+      - redis
+
+  db:
+    image: postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    container_name: postgres_db
+
+  redis:
+    image: redis:latest
+    ports:
+      - "6379:6379"
+
+  celery:
+    build: C:\Users\hp\Desktop\Pawan\CompanyTask
+    user: "1000:1000"
+    command: 
+      - sh
+      - -c
+      - "celery -A taskmanager worker --uid=1000 --gid=1000 --loglevel=info"
+    environment:
+      - CELERY_RUNAS_USER=1000:1000
+      - CELERYD_FORCE_EXECV=1 
+    volumes:
+      - .:/django
+    depends_on:
+      - db
+      - redis
+
+volumes:
+  postgres_data:
