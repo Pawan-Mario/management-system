@@ -1,4 +1,4 @@
-Instruction to Download the project .........
+Instruction to Download the project .........<br>
 Step 1: Install Docker (if not installed), Visual Studio,python and Django <br>
 Step 2: Clone the Django Project <br>
 Step 3: Build and Run the Docker Container
@@ -15,7 +15,7 @@ select get
 select the Bearer Token and paste the ACCESS_TOKEN
 you will get the data Raw/Json formate<br>
 step 7: To Download in CSV 
-http://127.0.0.1:8000/tasks/export/<br>
+http://127.0.0.1:8000/tasks/export/<br><br>
 ![Screenshot 2025-03-19 064529](https://github.com/user-attachments/assets/f2da4916-e2c4-4188-a2dd-c8e413266d40)
 ![Screenshot 2025-03-19 064625](https://github.com/user-attachments/assets/ad6fdb83-d880-4338-aa7e-7b9659fdc8bb)
 ![Screenshot 2025-03-19 064405](https://github.com/user-attachments/assets/8c399f1f-2987-40b5-b0ff-34a3bc6b8884)
