@@ -1,6 +1,6 @@
 Instruction to Download the project .........
-Step 1: Install Docker (if not installed), Visual Studio,python and Django  
-Step 2: Clone the Django Project
+Step 1: Install Docker (if not installed), Visual Studio,python and Django \n  
+Step 2: Clone the Django Project \n
 Step 3: Build and Run the Docker Container
 docker build -t django_project .
 OR if using docker-compose, run:
